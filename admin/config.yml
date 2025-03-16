@@ -1,1 +1,29 @@
+backend:
+  name: github
+  repo: patron4627/sumela  # Dein GitHub-Repo
+  branch: main  # Falls dein Hauptzweig anders heißt, ändere ihn hier
+
+media_folder: "bilder"  # Speichert Bilder im Ordner "bilder"
+public_folder: "/bilder"
+
+collections:
+  - name: "seiten"
+    label: "Seiten"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  - name: "speisekarte"
+    label: "Speisekarte"
+    folder: "content/speisekarte"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Gericht", name: "gericht", widget: "string" }
+      - { label: "Preis", name: "preis", widget: "string" }
+      - { label: "Beschreibung", name: "beschreibung", widget: "text" }
+      - { label: "Bild", name: "bild", widget: "image" }
 
