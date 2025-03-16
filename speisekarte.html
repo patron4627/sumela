@@ -28,7 +28,7 @@
   <main>
     <!-- Hero-Sektion mit Video -->
     <section class="menu-hero">
-      <video autoplay muted loop playsinline preload="metadata" class="hero-video">
+      <video autoplay muted loop playsinline preload="metadata" loading="eager" class="hero-video">
         <source src="menu-hero.webm" type="video/webm">
         <source src="menu-hero.mp4" type="video/mp4">
         Ihr Browser unterstützt das Video-Tag nicht.
@@ -39,75 +39,85 @@
       </div>
     </section>
 
-    <!-- Speisekarten-Sektion -->
-    <section class="menu">
-      <div class="menu-category">
-        <h3>Vorspeisen</h3>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Bruschetta</h4>
-              <p>Klassisches italienisches Bruschetta mit Tomaten, Basilikum und Olivenöl.</p>
-            </div>
-            <div class="item-price">5,90 €</div>
-          </li>
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Caprese</h4>
-              <p>Frische Mozzarella, Tomaten und Basilikum, beträufelt mit Balsamico-Glasur.</p>
-            </div>
-            <div class="item-price">6,50 €</div>
-          </li>
-        </ul>
-      </div>
+   <!-- Speisekarten-Sektion -->
+<section class="menu">
+  <!-- Tabs für die Kategorien -->
+  <div class="menu-tabs">
+    <button class="tab-link active" data-category="vorspeisen">Vorspeisen</button>
+    <button class="tab-link" data-category="hauptgerichte">Hauptgerichte</button>
+    <button class="tab-link" data-category="desserts">Desserts</button>
+  </div>
 
-      <div class="menu-category">
-        <h3>Hauptgerichte</h3>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Spaghetti Bolognese</h4>
-              <p>Spaghetti mit einer reichhaltigen Bolognese-Sauce aus Rindfleisch.</p>
-            </div>
-            <div class="item-price">12,90 €</div>
-          </li>
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Pizza Margherita</h4>
-              <p>Klassische Pizza mit Tomatensauce, Mozzarella und frischem Basilikum.</p>
-            </div>
-            <div class="item-price">9,90 €</div>
-          </li>
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Hamsi Tava</h4>
-              <p>Hamsi Tava aus Trabzon.</p>
-            </div>
-            <div class="item-price">14,90 €</div>
-          </li>
-        </ul>
-      </div>
+  <!-- Vorspeisen -->
+  <div id="vorspeisen" class="menu-category active">
+    <h3>Vorspeisen</h3>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Bruschetta</h4>
+          <p>Klassisches italienisches Bruschetta mit Tomaten, Basilikum und Olivenöl.</p>
+        </div>
+        <div class="item-price">5,90 €</div>
+      </li>
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Caprese</h4>
+          <p>Frische Mozzarella, Tomaten und Basilikum, beträufelt mit Balsamico-Glasur.</p>
+        </div>
+        <div class="item-price">6,50 €</div>
+      </li>
+    </ul>
+  </div>
 
-      <div class="menu-category">
-        <h3>Desserts</h3>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Tiramisu</h4>
-              <p>Italienischer Klassiker mit Mascarpone, Kaffee und Kakao.</p>
-            </div>
-            <div class="item-price">4,90 €</div>
-          </li>
-          <li class="menu-item">
-            <div class="item-info">
-              <h4>Panna Cotta</h4>
-              <p>Cremiges Dessert mit Vanille und frischen Beeren.</p>
-            </div>
-            <div class="item-price">5,50 €</div>
-          </li>
-        </ul>
-      </div>
-    </section>
+  <!-- Hauptgerichte -->
+  <div id="hauptgerichte" class="menu-category">
+    <h3>Hauptgerichte</h3>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Spaghetti Bolognese</h4>
+          <p>Spaghetti mit einer reichhaltigen Bolognese-Sauce aus Rindfleisch.</p>
+        </div>
+        <div class="item-price">12,90 €</div>
+      </li>
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Pizza Margherita</h4>
+          <p>Klassische Pizza mit Tomatensauce, Mozzarella und frischem Basilikum.</p>
+        </div>
+        <div class="item-price">9,90 €</div>
+      </li>
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Hamsi Tava</h4>
+          <p>Hamsi Tava aus Trabzon.</p>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Desserts -->
+  <div id="desserts" class="menu-category">
+    <h3>Desserts</h3>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Tiramisu</h4>
+          <p>Italienischer Klassiker mit Mascarpone, Kaffee und Kakao.</p>
+        </div>
+        <div class="item-price">4,90 €</div>
+      </li>
+      <li class="menu-item">
+        <div class="item-info">
+          <h4>Panna Cotta</h4>
+          <p>Cremiges Dessert mit Vanille und frischen Beeren.</p>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </li>
+    </ul>
+  </div>
+</section>
   </main>
 
   <footer>

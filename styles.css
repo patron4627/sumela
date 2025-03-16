@@ -263,6 +263,41 @@ body {
     margin-left: 1rem;
     white-space: nowrap;
   }
+  /* Tabs */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab-link {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tab-link.active {
+  color: #ca8e46;
+  border-bottom: 2px solid #ca8e46;
+}
+
+.tab-link:hover {
+  color: #ca8e46;
+}
+
+/* Kategorien */
+.menu-category {
+  display: none;
+}
+
+.menu-category.active {
+  display: block;
+}
   
   /* Hero-Sektion (Kontaktseite) */
 .contact-hero {
@@ -511,3 +546,56 @@ body {
       height: 250px;
     }
   }
+
+
+
+
+
+/* Ladeanimation */
+#loading-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ca8e46; /* Hintergrundfarbe (kann angepasst werden) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Über allem anderen */
+  animation: fadeOut 1s ease-in-out 1s forwards; /* Animation nach 2 Sekunden */
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: #fff; /* Textfarbe */
+  animation: slideUp 1s ease-in-out; /* Text-Animation */
+}
+
+/* Text-Animation: Text gleitet nach oben */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hintergrund-Animation: Langsam ausblenden */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden; /* Versteckt das Element nach der Animation */
+  }
+}
