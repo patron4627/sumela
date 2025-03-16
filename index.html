@@ -28,7 +28,7 @@
   <main>
     <!-- Hero-Sektion mit Video -->
     <section class="hero">
-      <video autoplay muted loop playsinline preload="auto" class="hero-video">
+      <video autoplay muted loop playsinline preload="metadata" class="hero-video">
         <source src="hero.mp4" type="video/mp4">
         Ihr Browser unterstützt das Video-Tag nicht.
       </video>
@@ -58,5 +58,13 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch((error) => console.log('Service Worker registration failed:', error));
+    }
+  </script>
+  
 </body>
 </html>
