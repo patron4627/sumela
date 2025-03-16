@@ -267,7 +267,7 @@ body {
   /* Hero-Sektion (Kontaktseite) */
 .contact-hero {
     background: url('contact-hero.jpg') no-repeat center center/cover;
-    height: 60vh; /* Etwas kleiner als auf der Startseite */
+    height: 100vh; /* Etwas kleiner als auf der Startseite */ 
     display: flex;
     justify-content: center;
     align-items: center;
