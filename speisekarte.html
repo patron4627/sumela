@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Name - Speisekarte</title>
+  <title> Sümela Grillhaus - Speisekarte</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Restaurant Name</div>
+      <div class="logo">Sümela Grillhaus</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="speisekarte.html">Speisekarte</a></li>
@@ -26,9 +26,13 @@
   </header>
 
   <main>
-    <!-- Hero-Sektion mit Hintergrundbild -->
+    <!-- Hero-Sektion mit Video -->
     <section class="menu-hero">
-      <div class="menu-hero-content">
+      <video autoplay muted loop playsinline preload="auto" class="hero-video">
+        <source src="menu-hero.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+      <div class="hero-content">
         <h1>Unsere Speisekarte</h1>
         <p>Entdecken Sie unsere köstlichen Gerichte, die mit frischen Zutaten zubereitet werden.</p>
       </div>
@@ -36,7 +40,6 @@
 
     <!-- Speisekarten-Sektion -->
     <section class="menu">
-      <!-- Vorspeisen -->
       <div class="menu-category">
         <h3>Vorspeisen</h3>
         <ul class="menu-list">
@@ -57,7 +60,6 @@
         </ul>
       </div>
 
-      <!-- Hauptgerichte -->
       <div class="menu-category">
         <h3>Hauptgerichte</h3>
         <ul class="menu-list">
@@ -78,7 +80,6 @@
         </ul>
       </div>
 
-      <!-- Desserts -->
       <div class="menu-category">
         <h3>Desserts</h3>
         <ul class="menu-list">
@@ -102,7 +103,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2023 Restaurant Name. Alle Rechte vorbehalten.</p>
+    <p>&copy; 2025 Sümela Grillhaus. Alle Rechte vorbehalten.</p>
   </footer>
 
   <script src="script.js"></script>

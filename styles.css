@@ -14,13 +14,13 @@ body {
   
   /* Header */
   header {
-    background: rgba(202, 142, 70, 0.95); /* #ca8e46 mit Transparenz */
+    background: rgba(202, 142, 70, 0.5); /* Transparenz auf 0.5 setzen */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Weicher Schatten */
-    backdrop-filter: blur(10px); /* Hintergrundunschärfe für modernen Look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
   }
   
   nav {
@@ -35,8 +35,8 @@ body {
   .logo {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #fff; /* Weiße Schrift für besseren Kontrast */
-    font-family: 'Playfair Display', serif; /* Elegante Schriftart für den Logo */
+    color: #fff;
+    font-family: 'Playfair Display', serif;
   }
   
   .nav-links {
@@ -51,7 +51,7 @@ body {
   }
   
   .nav-links a {
-    color: #fff; /* Weiße Schrift für die Links */
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
@@ -59,8 +59,8 @@ body {
   }
   
   .nav-links a:hover {
-    color: #ffd700; /* Goldener Hover-Effekt für Kontrast */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    color: #ffd700;
+    transform: translateY(-2px);
   }
   
   .burger {
@@ -72,7 +72,7 @@ body {
   .burger div {
     width: 25px;
     height: 3px;
-    background: #fff; /* Weiße Linien für das Burger-Menü */
+    background: #fff;
     margin: 4px;
     transition: all 0.3s ease;
   }
@@ -90,43 +90,54 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
   }
   
-  /* Hero-Sektion (Startseite) */
-  .hero {
-    background: url('hero.mp4') no-repeat center center/cover;
+/* Hero-Sektion mit Video */
+.hero, .menu-hero {
+    position: relative;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    position: relative;
   }
   
-  .hero::before {
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .hero::before, .menu-hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dunkler Overlay für bessere Lesbarkeit */
+    background: rgba(0, 0, 0, 0.7); /* Dunklerer Overlay (0.7 statt 0.5) */
+    z-index: 0;
   }
   
-  .hero-content {
+  .hero-content, .menu-hero .hero-content {
     position: relative;
     z-index: 1;
   }
   
-  .hero h1 {
+  .hero h1, .menu-hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
   }
   
-  .hero p {
+  .hero p, .menu-hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-  
   .btn {
     background: #ff5733;
     color: #fff;
@@ -141,42 +152,47 @@ body {
     background: #e64a2e;
   }
   
-  /* Hero-Sektion (Speisekarte) */
-  .menu-hero {
-    background: url('menu-hero.mp4') no-repeat center center/cover;
-    height: 60vh; /* Etwas kleiner als auf der Startseite */
+  /* Über uns Sektion */
+  .about {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
+    gap: 4rem;
   }
   
-  .menu-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dunkler Overlay für bessere Lesbarkeit */
-  }
-  
-  .menu-hero-content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .menu-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+  .about-text {
+    flex: 1;
     font-family: 'Playfair Display', serif;
+    color: #2c3e50;
   }
   
-  .menu-hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  .about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  
+  .about-image {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Speisekarten-Sektion */
@@ -202,7 +218,7 @@ body {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
-    color: #ca8e46; /* Farbe an den Header angepasst */
+    color: #ca8e46;
     border-bottom: 2px solid #ca8e46;
     display: inline-block;
     padding-bottom: 0.5rem;
@@ -219,18 +235,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
-    border-bottom: 1px solid #eee; /* Feine Linie zwischen den Gerichten */
+    border-bottom: 1px solid #eee;
   }
   
   .menu-item:last-child {
-    border-bottom: none; /* Keine Linie nach dem letzten Gericht */
+    border-bottom: none;
   }
   
   .item-info h4 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: #2c3e50;
-    font-weight: 600; /* Etwas fetter für bessere Lesbarkeit */
+    font-weight: 600;
   }
   
   .item-info p {
@@ -243,72 +259,11 @@ body {
   .item-price {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #ca8e46; /* Farbe an den Header angepasst */
+    color: #ca8e46;
     margin-left: 1rem;
-    white-space: nowrap; /* Preis in einer Zeile halten */
+    white-space: nowrap;
   }
   
-  /* Footer */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
-  /* Responsive Stile */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      padding: 1rem;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin: 1rem 0;
-    }
-  
-    .burger {
-      display: flex;
-    }
-  
-    .hero h1 {
-      font-size: 3rem;
-    }
-  
-    .hero p {
-      font-size: 1.2rem;
-    }
-  
-    .menu-hero h1 {
-      font-size: 2.5rem;
-    }
-  
-    .menu-hero p {
-      font-size: 1.2rem;
-    }
-  
-    .menu-item {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 0;
-    }
-  
-    .item-price {
-      margin-top: 0.5rem;
-      margin-left: 0;
-    }
-  }
   /* Hero-Sektion (Kontaktseite) */
 .contact-hero {
     background: url('contact-hero.jpg') no-repeat center center/cover;
@@ -331,18 +286,18 @@ body {
     background: rgba(0, 0, 0, 0.5); /* Dunkler Overlay für bessere Lesbarkeit */
   }
   
-  .contact-hero-content {
+  .hero-content {
     position: relative;
     z-index: 1;
   }
   
-  .contact-hero h1 {
+  .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
   }
   
-  .contact-hero p {
+  .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
@@ -356,7 +311,7 @@ body {
   
   .contact-container {
     display: flex;
-    justify-content: center; /* Zentrieren der Kontaktdaten */
+    justify-content: center;
   }
   
   .contact-info {
@@ -383,13 +338,13 @@ body {
   }
   
   .contact-info a {
-    color: #ca8e46; /* Farbe an den Header angepasst */
+    color: #ca8e46;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .contact-info a:hover {
-    color: #b87d3d; /* Dunklere Farbe beim Hover */
+    color: #b87d3d;
   }
   
   .contact-info ul {
@@ -419,9 +374,9 @@ body {
       padding: 1.5rem;
     }
   }
-
+  
   /* Impressum-Sektion */
-.impressum {
+  .impressum {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -457,26 +412,102 @@ body {
   }
   
   .impressum a {
-    color: #ca8e46; /* Farbe an den Header angepasst */
+    color: #ca8e46;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .impressum a:hover {
-    color: #b87d3d; /* Dunklere Farbe beim Hover */
+    color: #b87d3d;
   }
   
-  /* Responsive Stile für die Impressum-Seite */
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Stile */
   @media (max-width: 768px) {
-    .impressum h1 {
-      font-size: 2rem;
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(202, 142, 70, 0.95);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 1rem;
     }
   
-    .impressum h2 {
-      font-size: 1.5rem;
+    .nav-links.active {
+      display: flex;
     }
   
-    .impressum p {
-      font-size: 0.9rem;
+    .nav-links li {
+      margin: 1rem 0;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  
+    .hero h1, .menu-hero h1, .contact-hero h1 {
+      font-size: 3rem;
+    }
+  
+    .hero p, .menu-hero p, .contact-hero p {
+      font-size: 1.2rem;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image {
+      max-width: 100%;
+    }
+  
+    .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 0;
+    }
+  
+    .item-price {
+      margin-top: 0.5rem;
+      margin-left: 0;
+    }
+  }
+
+  /* Google Maps Karte */
+.map-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  /* Responsive Stile für die Kontaktseite */
+@media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .map-container {
+      height: 250px;
     }
   }
