@@ -121,17 +121,7 @@
   </div>
 </section>
   </main>
-  <div id="speisekarte"></div>
-
-<script>
-async function ladeSpeisekarte() {
-    const response = await fetch('content/speisekarte/gerichte.md');
-    const text = await response.text();
-    document.getElementById('speisekarte').innerHTML = marked.parse(text);
-}
-
-ladeSpeisekarte();
-</script>
+ 
 
 
   <footer>
